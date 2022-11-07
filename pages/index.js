@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import Layout from "../components/layout";
 import Board from "../components/board";
 import { TOKEN, DATABASE_ID } from "../config";
