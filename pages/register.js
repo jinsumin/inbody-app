@@ -46,7 +46,7 @@ const Register = () => {
           <div className="container px-5 py-24 mx-auto">
             <div className="flex flex-col text-center w-full mb-12">
               <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-10">
-                공지사항 등록
+                공지사항 작성
               </h1>
               <form onSubmit={submitForm}>
                 <div className="lg:w-1/2 md:w-2/3 mx-auto">
@@ -84,16 +84,16 @@ const Register = () => {
                           value={contents}
                           onChange={(e) => setContents(e.target.value)}
                           required
-                          className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                          className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-48 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                         ></textarea>
                       </div>
                     </div>
-                    <div className="p-2 w-full">
+                    <div className="p-2 w-full grid place-items-end h-6">
                       <button
                         type="submit"
-                        className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                        className="flex mx-auto text-white bg-orange-700 border-0 py-2 px-8 focus:outline-none hover:bg-orange-500 rounded text-lg"
                       >
-                        저 장
+                        등 록
                       </button>
                     </div>
                   </div>
