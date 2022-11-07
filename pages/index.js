@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Layout from "../components/layout";
 import Board from "../components/board";
+import { TOKEN, DATABASE_ID } from "../config";
 
 export default function Home({ board }) {
   return (
@@ -12,7 +13,7 @@ export default function Home({ board }) {
         <link rel="icon" href="/dev.png" />
       </Head>
       <div>
-        <Board board={board} />
+        {/* <Board board={board} /> */}
       </div>
     </Layout>
   );

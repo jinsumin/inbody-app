@@ -1,17 +1,6 @@
-import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Header() {
-  useEffect(() => {
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth",
-        });
-      });
-    });
-  });
-
   return (
     <>
       <header className="sticky top-0 z-50 text-gray-600 body-font shadow-2xl">
@@ -23,12 +12,12 @@ export default function Header() {
             <span className="ml-3 text-xl">inbody test</span>
           </a>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <a href="#main-section" className="mr-5 hover:text-gray-900">
-              공지사항
-            </a>
-            <a href="#about-section" className="mr-5 hover:text-gray-900">
-              등록
-            </a>
+            <Link href="/" className="flex items-center text-lg px-4 -mb-1 border-b-2 border-transparent hover:border-teal-600 focus:border-teal-600 no-underline">
+                공지사항
+            </Link>
+            <Link href="/register" className="flex items-center text-lg px-4 -mb-1 border-b-2 border-transparent hover:border-teal-600 focus:border-teal-600 no-underline">
+                등록
+            </Link>
           </nav>
         </div>
       </header>

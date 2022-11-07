@@ -27,9 +27,9 @@ const Register = () => {
       setName("");
       setEmail("");
       setMessage("");
-      toast("메시지가 성공적으로 전달 되었습니다!", { type: "success" });
+      toast("메시지가 성공적으로 전달 되었습니다!!!", { type: "success" });
     } else {
-      toast("전송 실패 : 입력창을 확인해 주세요.", { type: "error" });
+      toast("전송 실패 : 입력창을 확인해 주세요!!!", { type: "error" });
     }
   };
 
@@ -44,14 +44,9 @@ const Register = () => {
         <section className="text-gray-600 body-font relative">
           <div className="container px-5 py-24 mx-auto">
             <div className="flex flex-col text-center w-full mb-12">
-              <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 mb-10">
-                Contact Me
+              <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-10">
+                공지사항 등록
               </h1>
-              <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
-                <p className="leading-relaxed text-lg mb-12">
-                  return development * future;
-                </p>
-              </div>
               <form onSubmit={submitForm}>
                 <div className="lg:w-1/2 md:w-2/3 mx-auto">
                   <div className="flex flex-wrap -m-2">
@@ -116,42 +111,12 @@ const Register = () => {
                         type="submit"
                         className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
                       >
-                        메시지 전송
+                        저 장
                       </button>
                     </div>
                   </div>
                 </div>
               </form>
-            </div>
-            <div className="lg:w-1/2 md:w-2/3 mx-auto">
-              <div className="flex flex-wrap -m-2">
-                <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                  <p className="leading-normal">dev.soomin@kakao.com</p>
-                  <p className="leading-normal my-5">010 4754 7257</p>
-                  <span className="flex flex-row place-content-center place-items-center">
-                    <a
-                      className="text-gray-500"
-                      href="https://open.kakao.com/o/sJeggkpe"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <div className="grid grid-rows-1 place-items-center place-content-center">
-                        OPEN KAKAO
-                        <svg
-                          fill="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          className="w-10 h-10 mt-2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                        </svg>
-                      </div>
-                    </a>
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
