@@ -9,7 +9,7 @@ export default function Header() {
             href="/"
             className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
           >
-            <span className="ml-3 text-xl">inbody test</span>
+            <span className="ml-3 text-xl">InBody TEST</span>
           </Link>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
             <Link href="/" className="flex items-center text-lg px-4 -mb-1 border-b-2 border-transparent hover:border-teal-600 focus:border-teal-600 no-underline">

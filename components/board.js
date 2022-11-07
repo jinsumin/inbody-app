@@ -9,7 +9,7 @@ const Board = ({ board }) => {
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
             board
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 p-12 m-6 gap-12 mx-10">
+          <div className="grid grid-cols-1 p-12 m-6 gap-12 mx-10 w-full justify-items-center">
             {board !== null
               ? board.results.map((aBoard) => (
                   <BoardItems key={aBoard.id} data={aBoard} />

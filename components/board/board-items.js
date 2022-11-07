@@ -8,8 +8,14 @@ const BoardItems = ({ data }) => {
   // const end = data.properties.Period.date.end;
 
   return (
-    <div className="project-card">
-      <div>
+    <div className="w-full bg-white flex flex-row justify-items-center place-items-center border-b-4 border-rose-400">
+      <div className="w-full bg-slate-400 text-center">
+        {title}
+      </div>
+      <div className="w-full text-center">
+        {title}
+      </div>
+      <div className="w-full text-center">
         {title}
       </div>
     </div>
