@@ -20,13 +20,13 @@ export default async function handler(req, res) {
         database_id: DATABASE_ID,
       },
       properties: {
-        Date: {
-          rich_text: [
-            {
-              plain_text: date,
-            },
-          ],
-        },
+        // Date: {
+        //   rich_text: [
+        //     {
+        //       plain_text: date,
+        //     },
+        //   ],
+        // },
         Contents: {
           rich_text: [
             {
