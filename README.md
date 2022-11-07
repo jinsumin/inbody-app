@@ -1,8 +1,7 @@
 ## 인바디 코딩테스트 과제
 ### 웹 개발 직군 지원자 진수민
 
-## https://inbody-board.vercel.app
-## [과제 배포 사이트 바로가기](https://inbody-board.vercel.app)
+## https://inbody-board.vercel.app [과제 배포 사이트 바로가기](https://inbody-board.vercel.app)
 
 ### 과제 내용
 - 공지사항 등록 페이지
