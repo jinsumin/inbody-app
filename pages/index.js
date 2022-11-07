@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Layout from '../components/layout'
+import Head from "next/head";
+import Image from "next/image";
+import Layout from "../components/layout";
+import Board from "../components/board";
 
 export default function Home() {
   return (
@@ -11,8 +12,40 @@ export default function Home() {
         <link rel="icon" href="/dev.png" />
       </Head>
       <div>
-
+        <Board />
       </div>
     </Layout>
-  )
+  );
+}
+
+export async function getServerSideProps() {
+  const options = {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Notion-Version": "2022-02-22",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${TOKEN}`,
+    },
+    body: JSON.stringify({
+      sorts: [
+        {
+          property: "Name",
+          direction: "ascending",
+        },
+      ],
+      page_size: 100,
+    }),
+  };
+
+  const response = await fetch(
+    `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
+    options
+  );
+  let projects = null;
+  projects = await response.json();
+
+  return {
+    props: { projects }, // will be passed to the page component as props
+  };
 }
