@@ -1,8 +1,38 @@
 import React from "react";
 import Layout from "../components/layout";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 const Register = () => {
+  const router = useRouter();
+
+  const refreshServerSide = () => {
+    router.replace(router.asPath);
+  };
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+    const res = await fetch("https://inbody-board.vercel.app/api/submit-form", {
+      method: "POST",
+      body: JSON.stringify({ name, email, message }),
+    });
+
+    if (res.status === 201) {
+      refreshServerSide();
+      setName("");
+      setEmail("");
+      setMessage("");
+      toast("메시지가 성공적으로 전달 되었습니다!", { type: "success" });
+    } else {
+      toast("전송 실패 : 입력창을 확인해 주세요.", { type: "error" });
+    }
+  };
+
   return (
     <Layout>
       <Head>

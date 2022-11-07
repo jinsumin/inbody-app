@@ -3,7 +3,7 @@ import Image from "next/image";
 import Layout from "../components/layout";
 import Board from "../components/board";
 
-export default function Home() {
+export default function Home({ board }) {
   return (
     <Layout>
       <Head>
@@ -12,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/dev.png" />
       </Head>
       <div>
-        <Board />
+        <Board board={board} />
       </div>
     </Layout>
   );
@@ -23,14 +23,14 @@ export async function getServerSideProps() {
     method: "POST",
     headers: {
       Accept: "application/json",
-      "Notion-Version": "2022-02-22",
+      "Notion-Version": "2022-06-28",
       "Content-Type": "application/json",
       Authorization: `Bearer ${TOKEN}`,
     },
     body: JSON.stringify({
       sorts: [
         {
-          property: "Name",
+          property: "date",
           direction: "ascending",
         },
       ],
@@ -42,10 +42,10 @@ export async function getServerSideProps() {
     `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
     options
   );
-  let projects = null;
-  projects = await response.json();
+  let board = null;
+  board = await response.json();
 
   return {
-    props: { projects }, // will be passed to the page component as props
+    props: { board }, // will be passed to the page component as props
   };
 }
