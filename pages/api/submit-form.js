@@ -23,9 +23,7 @@ export default async function handler(req, res) {
         contents: {
           rich_text: [
             {
-              text: {
-                content: contents,
-              },
+              plain_text: contents,
             },
           ],
         },
@@ -37,9 +35,7 @@ export default async function handler(req, res) {
         title: {
           title: [
             {
-              text: {
-                content: title,
-              },
+              plain_text: title,
             },
           ],
         },
