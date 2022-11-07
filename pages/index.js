@@ -30,7 +30,7 @@ export async function getServerSideProps() {
     body: JSON.stringify({
       sorts: [
         {
-          property: "Date",
+          property: "title",
           direction: "ascending",
         },
       ],
