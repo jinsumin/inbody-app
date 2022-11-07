@@ -22,7 +22,7 @@ const Register = () => {
     e.preventDefault();
     const res = await fetch("https://inbody-board.vercel.app/register/api/submit-form", {
       method: "POST",
-      body: JSON.stringify({ contents, date, title }),
+      body: JSON.stringify({ title, contents, date}),
     });
 
     if (res.status === 201) {
