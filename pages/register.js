@@ -20,7 +20,7 @@ const Register = () => {
     // console.log(date);
     // setDate(date);
     e.preventDefault();
-    const res = await fetch("http://localhost:3000/api/submit-form", {
+    const res = await fetch("https://inbody-board.vercel.app/api/submit-form", {
       method: "POST",
       body: JSON.stringify({ title, contents }),
     });
