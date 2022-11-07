@@ -13,11 +13,11 @@ const Register = () => {
 
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState("2022-11-02");
 
   const submitForm = async (e) => {
-    date = new Date().toJSON();
-    console.log(date); 
+    // date = new Date().toJSON();
+    // console.log(date); 
     // setDate(date);
     e.preventDefault();
     const res = await fetch("https://inbody-board.vercel.app/api/submit-form", {
