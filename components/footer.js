@@ -1,5 +1,6 @@
-export default function Footer() {
+import Image from "next/image";
 
+export default function Footer() {
   return (
     <>
       <footer className="body-font shadow-2xl">
@@ -9,6 +10,13 @@ export default function Footer() {
               href="#main-section"
               className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900 "
             >
+              <Image
+                // className="object-cover object-center rounded"
+                alt="hero"
+                src="/logo.png"
+                width="100"
+                height="100"
+              />
               <span className="ml-3 text-xl">InBody TEST</span>
             </a>
             <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">
