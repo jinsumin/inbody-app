@@ -17,7 +17,7 @@ const Register = () => {
 
   const submitForm = async (e) => {
     // date = new Date().toJSON();
-    // console.log(date); 
+    // console.log(date);
     // setDate(date);
     e.preventDefault();
     const res = await fetch("https://inbody-board.vercel.app/api/submit-form", {
@@ -30,9 +30,7 @@ const Register = () => {
       setTitle("");
       setContents("");
       setDate("");
-      toast("공지사항 등록 성공!!!", { type: "success" });
     } else {
-      toast("전송 실패 : 입력창을 확인해 주세요!!!", { type: "error" });
     }
   };
 
