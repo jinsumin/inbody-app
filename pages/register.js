@@ -3,6 +3,8 @@ import Layout from "../components/layout";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 const Register = () => {
   const router = useRouter();
@@ -30,8 +32,10 @@ const Register = () => {
       setTitle("");
       setContents("");
       // setDate("");
-      console.log("success");
+      toast("공지사항이 성공적으로 등록되었습니다!", { type: "success" });
+      router.push("/");
     } else {
+      toast("등록 실패 : 입력창을 확인하세요!", { type: "error" });
     }
   };
 
@@ -49,6 +53,7 @@ const Register = () => {
               <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-10">
                 공지사항 작성
               </h1>
+              <ToastContainer />
               <form onSubmit={submitForm}>
                 <div className="lg:w-1/2 md:w-2/3 mx-auto">
                   <div className="flex flex-wrap -m-2">
