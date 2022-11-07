@@ -26,8 +26,8 @@ const BoardItems = ({ data }) => {
           />
         </div>
       </div>
-      <div className="text-center justify-items-center items-center bg-slate-100 rounded-sm">
-        {visible && <div className="h-60 p-20">{contents}</div>}
+      <div className="text-center justify-items-center items-center bg-slate-100 rounded-b-2xl mx-1">
+        {visible && <div className="h-60 p-20 mt-2">{contents}</div>}
       </div>
     </div>
   );
