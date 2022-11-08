@@ -2,7 +2,7 @@ import React from "react";
 import BoardItems from "./board/board-items";
 
 const Board = ({ board }) => {
-  const isDeleted = ({ aBoard }) => {
+  const isDeleted = (aBoard) => {
     const state = aBoard.properties.State.rich_text[0].text.content;
     if (state == "9999") {
       return true;
