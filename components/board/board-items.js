@@ -29,7 +29,7 @@ const BoardItems = ({ data }) => {
       body: JSON.stringify({ archived: true }),
     };
 
-    fetch(`/api.notion.com/v1/pages/${page_id}`, options)
+    fetch(`/api/v1/pages/${page_id}`, options)
       .then((response) => response.json())
       .then((response) => console.log(response))
       .catch((err) => console.error(err));
