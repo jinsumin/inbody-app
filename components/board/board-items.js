@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
 
@@ -6,14 +5,39 @@ const BoardItems = ({ data }) => {
   const title = data.properties.Title.title[0].plain_text;
   const contents = data.properties.Contents.rich_text[0].plain_text;
   const start = data.properties.Date.date.start;
+  const block_id = data.id;
 
   const [visible, setVisible] = useState(false);
+
+  const deleteItem = async () => {
+    console.log("delete item process");
+    console.log(block_id);
+    const options = {
+      method: "DELETE",
+      headers: { accept: "application/json", "Notion-Version": "2022-06-28" },
+    };
+
+    fetch(`https://api.notion.com/v1/blocks/${block_id}`, options)
+      .then((response) => response.json())
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
+  };
 
   return (
     <div className="w-full justify-items-center items-center object-center">
       <div className="w-full h-10 bg-white flex flex-row justify-items-center place-items-center border-2 border-rose-400 rounded-full shadow-lg">
         <div className="w-full text-center">{title}</div>
         <div className="w-1/3 text-center">{start}</div>
+        <div className="mr-3 ml-3">
+          <Image
+            // className="object-cover object-center rounded"
+            alt="trash-icon"
+            src="/trash-icon.png"
+            width={30}
+            height={30}
+            onClick={() => deleteItem()}
+          />
+        </div>
         <div className="mr-3">
           <Image
             // className="object-cover object-center rounded"
