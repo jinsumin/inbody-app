@@ -6,7 +6,7 @@ const BoardItems = ({ data }) => {
   const title = data.properties.Title.title[0].plain_text;
   const contents = data.properties.Contents.rich_text[0].plain_text;
   // const start = data.properties.Date.rich_text[0].plain_text;
-  const start = "2022-11-11"
+  const start = date.properties.Date.date.start;
   // const end = data.properties.Period.date.end;
 
   const [visible, setVisible] = useState(false);
