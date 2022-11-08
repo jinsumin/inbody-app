@@ -20,13 +20,13 @@ const BoardItems = ({ data }) => {
 
   const deleteItem = async () => {
     const options = {
-      method: "DELETE",
+      method: "PATCH",
       headers: {
         accept: "application/json",
         "Notion-Version": "2022-06-28",
-        // "content-type": "application/json",
+        "content-type": "application/json",
       },
-      // body: JSON.stringify({ archived: true }),
+      body: JSON.stringify({ archived: true }),
     };
 
     fetch(`/api/v1/pages/${page_id}`, options)
