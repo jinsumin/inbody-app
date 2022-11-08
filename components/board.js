@@ -3,7 +3,8 @@ import BoardItems from "./board/board-items";
 
 const Board = ({ board }) => {
   const isDeleted = (aBoard) => {
-    const state = aBoard.properties.State.rich_text[0].text.content;
+    // const state = aBoard.properties.State.rich_text[0].text.content;
+    const state = 0;
     if (state == "9999") {
       return true;
     }
