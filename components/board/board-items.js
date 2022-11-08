@@ -14,7 +14,7 @@ const BoardItems = ({ data }) => {
   const title = data.properties.Title.title[0].plain_text;
   const contents = data.properties.Contents.rich_text[0].plain_text;
   const start = data.properties.Date.date.start;
-  const block_id = data.id;
+  const page_id = data.id;
 
   const [visible, setVisible] = useState(false);
 
@@ -24,7 +24,7 @@ const BoardItems = ({ data }) => {
       headers: { accept: "application/json", "Notion-Version": "2022-06-28" },
     };
 
-    fetch(`/api.notion.com/v1/blocks/${block_id}`, options)
+    fetch(`/api.notion.com/v1/pages/${page_id}`, options)
       .then((response) => response.json())
       .then((response) => console.log(response))
       .catch((err) => console.error(err));
