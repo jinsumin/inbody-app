@@ -28,12 +28,12 @@ export async function getServerSideProps() {
       Authorization: `Bearer ${TOKEN}`,
     },
     body: JSON.stringify({
-      // sorts: [
-      //   {
-      //     property: "Date",
-      //     direction: "descending",
-      //   },
-      // ],
+      sorts: [
+        {
+          property: "Date",
+          direction: "descending",
+        },
+      ],
       page_size: 100,
     }),
   };
