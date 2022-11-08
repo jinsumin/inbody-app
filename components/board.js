@@ -2,9 +2,9 @@ import React from "react";
 import BoardItems from "./board/board-items";
 
 const Board = ({ board }) => {
-  const isDeleted = () => {
-    const state = board.results.properties.State.rich_text[0].text.content;
-    if (state == 9999) {
+  const isDeleted = ({ aBoard }) => {
+    const state = aBoard.properties.State.rich_text[0].text.content;
+    if (state == "9999") {
       return true;
     }
     return false;
@@ -18,10 +18,13 @@ const Board = ({ board }) => {
             BOARD
           </h1>
           <div className="grid grid-cols-1 p-12 m-6 gap-12 mx-10 w-full justify-items-center">
-            {board !== (null && !isDeleted())
-              ? board.results.map((aBoard) => (
-                  <BoardItems key={aBoard.id} data={aBoard} />
-                ))
+            {board !== null
+              ? board.results.map(
+                  (aBoard) =>
+                    !isDeleted(aBoard) && (
+                      <BoardItems key={aBoard.id} data={aBoard} />
+                    )
+                )
               : null}
           </div>
         </div>
