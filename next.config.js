@@ -9,7 +9,7 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: `https://api.notion.com/:path*`,
+        destination: `https://inbody-board.vercel.app/:path*`,
       },
     ];
   },
