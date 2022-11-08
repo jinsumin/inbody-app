@@ -18,8 +18,7 @@ const BoardItems = ({ data }) => {
   const [visible, setVisible] = useState(false);
   const [state, setState] = useState("1");
 
-  const deleteItem = async (e) => {
-    e.preventDefault();
+  const deleteItem = async () => {
     setState("9999");
     const res = await fetch("https://inbody-board.vercel.app/api/update-state", {
       method: "POST",
