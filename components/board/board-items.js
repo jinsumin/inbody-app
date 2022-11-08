@@ -14,24 +14,25 @@ const BoardItems = ({ data }) => {
   const title = data.properties.Title.title[0].plain_text;
   const contents = data.properties.Contents.rich_text[0].plain_text;
   const start = data.properties.Date.date.start;
+  const block_id = data.id;
 
   const [visible, setVisible] = useState(false);
-  const [state, setState] = useState("1");
 
   const deleteItem = async () => {
-    setState("9999");
-    const res = await fetch("https://inbody-board.vercel.app/api/update-state", {
-      method: "POST",
-      body: JSON.stringify({ state }),
-    });
-
-    if (res.status === 201) {
-      refreshServerSide();
-      toast("공지사항이 성공적으로 삭제되었습니다!", { type: "success" });
-      router.push("/");
-    } else {
-      toast("삭제 실패!", { type: "error" });
-    }
+    const options = {
+      method: 'PATCH',
+      headers: {
+        accept: 'application/json',
+        'Notion-Version': '2022-06-28',
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({archived: true})
+    };
+    
+    fetch(`https://api.notion.com/v1/blocks/${block_id}`, options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
   };
 
   return (

@@ -16,7 +16,6 @@ const Register = () => {
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
   const [date, setDate] = useState("2022-11-02");
-  const [state, setState] = useState("1");
 
   const submitForm = async (e) => {
     date = new Date().toJSON();
@@ -25,7 +24,7 @@ const Register = () => {
     e.preventDefault();
     const res = await fetch("https://inbody-board.vercel.app/api/submit-form", {
       method: "POST",
-      body: JSON.stringify({ date, title, contents, state }),
+      body: JSON.stringify({ date, title, contents }),
     });
 
     if (res.status === 201) {
