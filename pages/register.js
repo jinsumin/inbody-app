@@ -32,6 +32,9 @@ const Register = () => {
         day >= 10 ? day : "0" + day
       }`
     );
+    date = `${year}-${month >= 10 ? month : "0" + month}-${
+      day >= 10 ? day : "0" + day
+    }`;
     e.preventDefault();
     const res = await fetch("https://inbody-board.vercel.app/api/submit-form", {
       method: "POST",
