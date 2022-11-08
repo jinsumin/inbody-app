@@ -18,9 +18,9 @@ const Register = () => {
   const [date, setDate] = useState("2022-11-02");
 
   const submitForm = async (e) => {
-    // date = new Date().toJSON();
-    // console.log(date);
-    // setDate(date);
+    date = new Date().toJSON();
+    console.log(date);
+    setDate(date);
     e.preventDefault();
     const res = await fetch("https://inbody-board.vercel.app/api/submit-form", {
       method: "POST",
@@ -31,7 +31,7 @@ const Register = () => {
       refreshServerSide();
       setTitle("");
       setContents("");
-      // setDate("");
+      setDate("");
       toast("공지사항이 성공적으로 등록되었습니다!", { type: "success" });
       router.push("/");
     } else {
