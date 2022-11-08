@@ -18,9 +18,20 @@ const Register = () => {
   const [date, setDate] = useState("2022-11-02");
 
   const submitForm = async (e) => {
-    date = new Date().toJSON();
-    console.log(date);
-    setDate(date);
+    const currentTime = new Date().toJSON();
+    const year = currentTime.getFullYear();
+    const month = currentTime.getMonth() + 1;
+    const day = currentTime.getDate();
+    console.log(
+      `${year}-${month >= 10 ? month : "0" + month}-${
+        day >= 10 ? day : "0" + day
+      }`
+    );
+    setDate(
+      `${year}-${month >= 10 ? month : "0" + month}-${
+        day >= 10 ? day : "0" + day
+      }`
+    );
     e.preventDefault();
     const res = await fetch("https://inbody-board.vercel.app/api/submit-form", {
       method: "POST",
