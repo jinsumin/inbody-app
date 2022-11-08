@@ -20,19 +20,14 @@ const BoardItems = ({ data }) => {
 
   const deleteItem = async () => {
     const options = {
-      method: 'PATCH',
-      headers: {
-        accept: 'application/json',
-        'Notion-Version': '2022-06-28',
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({archived: true})
+      method: "DELETE",
+      headers: { accept: "application/json", "Notion-Version": "2022-06-28" },
     };
-    
+
     fetch(`https://api.notion.com/v1/blocks/${block_id}`, options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
+      .then((response) => response.json())
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
   };
 
   return (
