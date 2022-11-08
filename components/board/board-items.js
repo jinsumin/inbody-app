@@ -24,7 +24,7 @@ const BoardItems = ({ data }) => {
       headers: { accept: "application/json", "Notion-Version": "2022-06-28" },
     };
 
-    fetch(`https://api.notion.com/v1/blocks/${block_id}`, options)
+    fetch(`/api.notion.com/v1/blocks/${block_id}`, options)
       .then((response) => response.json())
       .then((response) => console.log(response))
       .catch((err) => console.error(err));
