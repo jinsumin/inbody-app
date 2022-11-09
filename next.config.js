@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
-  // swcMinify: true,
+  reactStrictMode: true,
   images: {
     domains: ["www.inbody.co.kr"],
   },

@@ -18,23 +18,6 @@ const BoardItems = ({ data }) => {
 
   const [visible, setVisible] = useState(false);
 
-  // const deleteItem = async () => {
-  //   const options = {
-  //     method: "PATCH",
-  //     headers: {
-  //       accept: "application/json",
-  //       "Notion-Version": "2022-06-28",
-  //       "content-type": "application/json",
-  //     },
-  //     body: JSON.stringify({ archived: true }),
-  //   };
-
-  //   fetch(`${process.env.NEXT_PUBLIC_URL}/v1/pages/${page_id}`, options)
-  //     .then((response) => response.json())
-  //     .then((response) => console.log(response))
-  //     .catch((err) => console.error(err));
-  // };
-
   const deleteItem = async () => {
     const res = await fetch("https://inbody-board.vercel.app/api/delete-item", {
       method: "PATCH",
@@ -52,11 +35,11 @@ const BoardItems = ({ data }) => {
 
   return (
     <div className="w-full justify-items-center items-center object-center">
-      <ToastContainer />
       <div className="w-full h-10 bg-white flex flex-row justify-items-center place-items-center border-2 border-rose-400 rounded-full shadow-lg">
         <div className="w-full text-center">{title}</div>
         <div className="w-1/3 text-center">{start}</div>
         <div className="mr-3 ml-3">
+          <ToastContainer />
           <Image
             // className="object-cover object-center rounded"
             alt="trash-icon"
