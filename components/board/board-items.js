@@ -18,21 +18,36 @@ const BoardItems = ({ data }) => {
 
   const [visible, setVisible] = useState(false);
 
-  const deleteItem = async () => {
-    const options = {
-      method: "PATCH",
-      headers: {
-        accept: "application/json",
-        "Notion-Version": "2022-06-28",
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ archived: true }),
-    };
+  // const deleteItem = async () => {
+  //   const options = {
+  //     method: "PATCH",
+  //     headers: {
+  //       accept: "application/json",
+  //       "Notion-Version": "2022-06-28",
+  //       "content-type": "application/json",
+  //     },
+  //     body: JSON.stringify({ archived: true }),
+  //   };
 
-    fetch(`${process.env.NEXT_PUBLIC_URL}/v1/pages/${page_id}`, options)
-      .then((response) => response.json())
-      .then((response) => console.log(response))
-      .catch((err) => console.error(err));
+  //   fetch(`${process.env.NEXT_PUBLIC_URL}/v1/pages/${page_id}`, options)
+  //     .then((response) => response.json())
+  //     .then((response) => console.log(response))
+  //     .catch((err) => console.error(err));
+  // };
+
+  const deleteItem = async () => {
+    const res = await fetch("https://inbody-board.vercel.app/api/delete-item", {
+      method: "PATCH",
+      body: JSON.stringify({ archived: true }),
+    });
+
+    if (res.status === 201) {
+      refreshServerSide();
+      toast("아이템이 성공적으로 삭제되었습니다!", { type: "success" });
+      router.push("/");
+    } else {
+      toast("등록 실패 : 입력창을 확인하세요!", { type: "error" });
+    }
   };
 
   return (
