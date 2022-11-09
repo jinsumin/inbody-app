@@ -8,7 +8,7 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/api/:path*",
+        source: "/v1/:path*",
         destination: "https://api.notion.com/:path*",
       },
     ];
