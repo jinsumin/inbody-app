@@ -38,7 +38,7 @@ const BoardItems = ({ data }) => {
   const deleteItem = async () => {
     const res = await fetch("https://inbody-board.vercel.app/api/delete-item", {
       method: "PATCH",
-      body: JSON.stringify({ archived: true }),
+      body: JSON.stringify({ page_id, archived: true }),
     });
 
     if (res.status === 201) {

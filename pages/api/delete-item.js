@@ -14,11 +14,9 @@ export default async function handler(req, res) {
       .json({ message: `${req.method} requests are not allowed` });
   }
   try {
-    const { archived } = JSON.parse(req.body);
+    const { page_id, archived } = JSON.parse(req.body);
     await notion.pages.update({
-      parent: {
-        database_id: DATABASE_ID,
-      },
+      id: page_id,
       properties: {
         archived: archived,
       },
