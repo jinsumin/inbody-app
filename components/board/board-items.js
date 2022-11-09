@@ -29,7 +29,7 @@ const BoardItems = ({ data }) => {
       body: JSON.stringify({ archived: true }),
     };
 
-    fetch(`/v1/pages/${page_id}`, options)
+    fetch(`${process.env.NEXT_PUBLIC_URL}/v1/pages/${page_id}`, options)
       .then((response) => response.json())
       .then((response) => console.log(response))
       .catch((err) => console.error(err));
