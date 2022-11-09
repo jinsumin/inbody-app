@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   try {
     const { page_id, archived } = JSON.parse(req.body);
     await notion.pages.update({
-      id: page_id,
+      page_id: page_id,
       parent: {
         database_id: DATABASE_ID,
       },
