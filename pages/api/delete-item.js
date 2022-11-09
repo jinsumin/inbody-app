@@ -16,13 +16,11 @@ export default async function handler(req, res) {
   try {
     const { page_id, archived } = JSON.parse(req.body);
     await notion.pages.update({
-      page_id: page_id,
+      id: page_id,
       //   parent: {
       //     database_id: DATABASE_ID,
       //   },
-      properties: {
-        archived: archived,
-      },
+      archived: archived,
     });
     res.status(201).json({ msg: "Sucess!!!" });
   } catch (error) {
